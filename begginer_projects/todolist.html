@@ -133,6 +133,22 @@
       background: rgba(255,255,255,0.3);
       border-radius: 10px;
     }
+@media print {
+
+  /* keep colors */
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* hide only the download button */
+  button {
+    display: none;
+  }
+
+}
+
+
   </style>
 </head>
 <body>
@@ -154,6 +170,7 @@
     </div>
 
     <ul id="todoList"></ul>
+    <button onclick="printTodo()">Download</button>
   </div>
 </body>
 <script src="todolist.js"></script>

@@ -41,3 +41,6 @@ function deleteTodo(index) {
   todos.splice(index, 1) 
   renderTodos()
 }
+function printTodo() {
+  window.print()
+}
