@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, #0f2027, #203a43, #2c5364),
+    url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+
+    .todo-app {
+      width: 350px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .todo-app h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .input-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #00ffd5;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    li {
+      background: rgba(255,255,255,0.15);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    li:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    li.completed span {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .delete {
+      background: transparent;
+      color: #ff4d4d;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .delete:hover {
+      transform: scale(1.2);
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="todo-app">
+    <h2>🚀 My Todo</h2>
+
+    <div class="input-box">
+      <input type="text" id="todoInput" placeholder="Add a task..." />
+      <button onclick="addTodo()">+</button>
+    </div>
+
+    <ul id="todoList"></ul>
+  </div>
+</body>
+<script src="todolist.js"></script>
+</html>
